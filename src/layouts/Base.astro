@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description: string }
+const { title, description } = Astro.props;
+const url = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#2259C3" />
+    <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+    <link rel="canonical" href={url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL('/og.svg', Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <slot />
+    <script>
+      // Reveal-on-scroll + nav state. One observer each, no dependencies.
+      const io = new IntersectionObserver(
+        (entries) => entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        }),
+        { rootMargin: '0px 0px -10% 0px', threshold: 0.08 }
+      );
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+      const sentinel = document.getElementById('hero-end');
+      const nav = document.querySelector('.nav');
+      if (sentinel && nav) {
+        new IntersectionObserver(([e]) => nav.classList.toggle('solid', !e.isIntersecting && e.boundingClientRect.top < 68), { rootMargin: '-68px 0px 0px 0px' }).observe(sentinel);
+      }
+    </script>
+  </body>
+</html>

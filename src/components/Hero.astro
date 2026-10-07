@@ -1,0 +1,102 @@
+---
+import { SHAPES } from './shapes';
+---
+<section class="hero" id="top">
+  <div class="wrap grid">
+    <div class="copy">
+      <p class="eyebrow tag">PT Tangen Universal Teknologi</p>
+      <h1>Mitra Teknologi Anda<span class="sub">Bisnis, Rekayasa &amp; Edukasi</span></h1>
+      <p class="lede">
+        Kami mendampingi klien di tiga bidang utama: solusi bisnis berbasis teknologi, rekayasa
+        perangkat lunak, dan edukasi digital.
+      </p>
+      <div class="actions">
+        <a class="btn btn-cream" href="#kontak">
+          Diskusi proyek
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#lini">Lihat lini kerja</a>
+      </div>
+    </div>
+
+    <svg class="mark" viewBox="-12 -8 283 186" role="img" aria-label="Logo Tangen: persegi, batang tegak, bilah diagonal, dan blok terpotong">
+      <g transform="skewX(-5)" fill="currentColor">
+        {Object.values(SHAPES).map((d) => <path d={d} />)}
+      </g>
+    </svg>
+  </div>
+
+  <ul class="wrap strip" aria-label="Bidang usaha">
+    <li>Bisnis</li>
+    <li>Rekayasa</li>
+    <li>Edukasi</li>
+  </ul>
+  <div id="hero-end" aria-hidden="true"></div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    background: var(--blue); color: var(--cream);
+    min-height: 100svh;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding-top: 6.5rem; overflow: clip;
+  }
+  .grid {
+    display: grid; align-items: center; gap: 3rem 2rem;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    padding-block: 2rem 3rem;
+  }
+  .tag { animation: rise 0.8s var(--ease) both; }
+  h1 {
+    font: 700 clamp(2.9rem, 1.2rem + 6.6vw, 6.4rem) / 0.94 var(--f-display);
+    letter-spacing: -0.045em; text-wrap: balance;
+    margin-block: 1.4rem 1.6rem;
+    animation: rise 0.9s 0.08s var(--ease) both;
+  }
+  h1 .sub {
+    display: block;
+    font: 500 clamp(1.25rem, 0.9rem + 1.8vw, 2.1rem) / 1.15 var(--f-display);
+    letter-spacing: -0.02em;
+    color: color-mix(in srgb, var(--cream) 78%, transparent);
+    margin-top: 0.5rem;
+  }
+  .lede { max-width: 34rem; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.25rem); opacity: 0.88; animation: rise 0.9s 0.18s var(--ease) both; }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.25rem; animation: rise 0.9s 0.28s var(--ease) both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(1.25rem); } }
+
+  .mark {
+    width: 100%; height: auto; color: var(--cream); overflow: visible;
+    animation: mark-enter 0.9s 0.15s var(--ease) both;
+  }
+  @keyframes mark-enter {
+    from { opacity: 0; transform: translateX(60px); }
+  }
+
+  /* Mark fades out to the left as the hero scrolls away (progressive enhancement). */
+  @supports (animation-timeline: scroll()) {
+    .mark {
+      animation: mark-enter 0.9s 0.15s var(--ease) both, mark-exit linear both;
+      animation-timeline: auto, view(block);
+      animation-range: normal, exit 0% exit 100%;
+    }
+    @keyframes mark-exit { to { opacity: 0; transform: translateX(-60px); } }
+  }
+
+  .strip {
+    list-style: none; padding-block: 1.5rem 1.75rem;
+    display: flex; flex-wrap: wrap; gap: 0.75rem 2.5rem;
+    border-top: 1px solid color-mix(in srgb, var(--cream) 25%, transparent);
+    font: 500 0.8rem/1 var(--f-mono); letter-spacing: 0.06em; text-transform: uppercase;
+    animation: rise 0.9s 0.5s var(--ease) both;
+  }
+  .strip li { display: inline-flex; align-items: center; gap: 0.6rem; }
+  .strip li::before { content: ''; width: 8px; height: 8px; background: var(--cream); border-radius: 1.5px; transform: skewX(-5deg); }
+
+  @media (max-width: 860px) {
+    .grid { grid-template-columns: 1fr; padding-top: 0.5rem; }
+    .mark { display: none; }
+    .hero { min-height: auto; justify-content: flex-start; padding-top: 5.5rem; padding-bottom: 1rem; }
+    .strip { margin-top: 1rem; }
+  }
+</style>

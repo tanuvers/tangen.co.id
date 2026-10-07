@@ -1,0 +1,34 @@
+---
+import { SHAPES } from './shapes';
+---
+<section class="contact" id="kontak">
+  <svg class="ghost" viewBox="-56 -8 376 186" aria-hidden="true">
+    <g transform="skewX(-5)" fill="currentColor">
+      {Object.values(SHAPES).map((d) => <path d={d} />)}
+    </g>
+  </svg>
+  <div class="wrap inner">
+    <p class="eyebrow reveal">Kontak</p>
+    <h2 class="h2 reveal" style="--i:1">Siap menjadi mitra teknologi Anda.</h2>
+    <p class="sub reveal" style="--i:2">Chat lewat WhatsApp atau kirim email, tim kami akan merespons dalam satu hari kerja.</p>
+    <div class="actions reveal" style="--i:3">
+      <a class="btn btn-cream" href="https://wa.me/6285707717786?text=Halo%2C%20saya%20ingin%20diskusi%20proyek%20dengan%20Tangen" target="_blank" rel="noopener">
+        +62 857-0771-7786 (Alief)
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="mailto:halo@tangen.co.id">
+        halo@tangen.co.id
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact { position: relative; overflow: clip; background: var(--blue); color: var(--cream); padding-block: clamp(5rem, 11vw, 9rem); }
+  .ghost { position: absolute; right: -8%; bottom: -18%; width: min(58rem, 90vw); color: var(--cream); opacity: 0.07; pointer-events: none; }
+  .inner { position: relative; }
+  .h2 { max-width: 16ch; margin-block: 1.25rem 1.25rem; }
+  .sub { max-width: 28rem; opacity: 0.85; }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.25rem; }
+</style>

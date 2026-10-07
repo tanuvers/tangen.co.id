@@ -1,0 +1,38 @@
+<section class="about section" id="tentang">
+  <div class="wrap grid">
+    <svg class="diagram reveal" viewBox="0 0 320 320" fill="none" aria-hidden="true">
+      <circle cx="160" cy="200" r="110" stroke="currentColor" stroke-width="1.5" opacity="0.35" />
+      <line class="tan" x1="0" y1="90" x2="320" y2="90" stroke="currentColor" stroke-width="2.5" pathLength="1" />
+      <rect x="152" y="82" width="16" height="16" rx="2.5" fill="currentColor" transform="skewX(-5)" />
+    </svg>
+
+    <div>
+      <p class="eyebrow reveal">Tentang kami</p>
+      <h2 class="h2 reveal" style="--i:1">
+        Tangen: menyentuh satu titik, lalu melaju lurus.
+      </h2>
+      <p class="reveal" style="--i:2">
+        Kami tidak percaya pada solusi yang mencoba menyentuh semuanya. Seperti garis tangen yang menyentuh
+        satu titik, kami fokus pada apa yang benar-benar penting bagi Anda — dan bergerak secara cepat dan presisi
+        menyelesaikannya.
+      </p>
+      <p class="reveal" style="--i:3">
+        PT Tangen Universal Teknologi beroperasi melalui dua divisi. Tangen Solutions menangani
+        perangkat lunak untuk bisnis — dari produk siap pakai hingga sistem yang direkayasa khusus.
+        Tangen Academic membuka akses edukasi digital bagi masyarakat luas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about { background: var(--sky); }
+  .grid { display: grid; gap: 3rem clamp(2rem, 6vw, 6rem); grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); align-items: center; }
+  .diagram { width: 100%; max-width: 26rem; color: var(--blue); overflow: visible; }
+  .tan { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s 0.2s var(--ease); }
+  .in .tan, :global(.no-js) .tan { stroke-dashoffset: 0; }
+  .h2 { margin-block: 1.25rem 1.75rem; }
+  p:not(.eyebrow) { max-width: 36rem; }
+  p + p { margin-top: 1rem; }
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } .diagram { max-width: 16rem; } }
+</style>

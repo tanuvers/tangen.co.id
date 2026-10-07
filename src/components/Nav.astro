@@ -1,0 +1,82 @@
+---
+import { SHAPES } from './shapes';
+const links = [
+  { href: '#lini', label: 'Lini kerja' },
+  { href: '#tentang', label: 'Tentang' },
+  { href: '#proses', label: 'Cara kerja' },
+  { href: '#aktivitas', label: 'Aktivitas' },
+];
+---
+<header class="nav">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="PT Tangen Universal Teknologi, ke atas">
+      <svg class="mark-icon" viewBox="-12 -8 283 186" width="30" height="30" aria-hidden="true">
+        <g transform="skewX(-5)" fill="currentColor">
+          {Object.values(SHAPES).map((d) => <path d={d} />)}
+        </g>
+      </svg>
+      <span>Tangen</span>
+    </a>
+
+    <nav class="links" aria-label="Utama">
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+
+    <a class="btn cta" href="#kontak">Diskusi proyek</a>
+
+    <details class="menu">
+      <summary aria-label="Buka menu"><span></span><span></span></summary>
+      <div class="sheet">
+        {links.map((l) => <a href={l.href}>{l.label}</a>)}
+        <a href="#kontak">Diskusi proyek</a>
+      </div>
+    </details>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: fixed; inset: 0 0 auto 0; z-index: 50;
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--ink) 30%, transparent), transparent);
+    color: var(--cream);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  }
+  .nav.solid {
+    background: color-mix(in srgb, var(--cream) 88%, transparent);
+    backdrop-filter: saturate(1.4) blur(14px);
+    color: var(--ink);
+    box-shadow: 0 1px 0 var(--line);
+  }
+  .bar { display: flex; align-items: center; gap: 2rem; height: 4.25rem; }
+  .brand { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; font: 600 1.15rem/1 var(--f-display); letter-spacing: -0.02em; margin-right: auto; }
+  .mark-icon { flex-shrink: 0; color: var(--cream); transition: color 0.3s; }
+  .nav.solid .mark-icon { color: var(--blue); }
+  .links { display: flex; gap: 2rem; font-size: 0.95rem; }
+  .links a { text-decoration: none; opacity: 0.8; transition: opacity 0.2s; }
+  .links a:hover { opacity: 1; }
+  .cta { padding: 0.65rem 1rem; font-size: 0.875rem; background: var(--cream); color: var(--blue); }
+  .solid .cta { background: var(--blue); color: var(--cream); }
+  .cta:hover { transform: translateY(-1px); }
+
+  .menu { display: none; position: relative; }
+  .menu summary { list-style: none; cursor: pointer; width: 2.5rem; height: 2.5rem; display: grid; place-content: center; gap: 6px; }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu summary span { display: block; width: 22px; height: 2px; background: currentColor; transition: transform 0.3s var(--ease); }
+  .menu[open] summary span:first-child { transform: translateY(4px) rotate(45deg); }
+  .menu[open] summary span:last-child { transform: translateY(-4px) rotate(-45deg); }
+  .sheet {
+    position: fixed; inset: 4.25rem 0 auto 0;
+    background: var(--cream); color: var(--ink);
+    padding: 0.5rem var(--gutter) 1.5rem;
+    display: grid; box-shadow: 0 24px 40px -24px rgb(10 26 61 / 0.35);
+    animation: drop 0.3s var(--ease);
+  }
+  .sheet a { text-decoration: none; padding: 1rem 0; border-bottom: 1px solid var(--line); font: 500 1.35rem/1 var(--f-display); }
+  .sheet a:last-child { border: 0; color: var(--blue); }
+  @keyframes drop { from { opacity: 0; transform: translateY(-8px); } }
+
+  @media (max-width: 760px) {
+    .links, .cta { display: none; }
+    .menu { display: block; }
+  }
+</style>

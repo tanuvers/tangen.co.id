@@ -1,0 +1,90 @@
+---
+const activities = [
+  {
+    logo: '/partners/belajaris.png',
+    alt: 'Belajaris',
+    badge: 'Terbaru',
+    title: 'Perilisan bertahap platform pembelajaran Belajaris.com',
+    text: 'Peluncuran modul dan fitur baru secara berkala untuk menghadirkan pengalaman belajar yang lebih baik bagi pengguna.',
+    url: 'https://belajaris.com',
+  },
+  {
+    logo: '/partners/pln.png',
+    alt: 'PLN',
+    sub: 'UAIL & OTL',
+    title: 'Pemeliharaan 2 sistem otomasi internal PLN',
+    text: 'Pemeliharaan rutin dan peningkatan performa untuk mendukung kelancaran operasional sistem internal, mencakup pembaruan fitur, perbaikan, dan optimasi keandalan.',
+  },
+];
+---
+<section class="activity section" id="aktivitas">
+  <div class="wrap">
+    <p class="eyebrow reveal">Aktivitas terkini</p>
+    <h2 class="h2 reveal" style="--i:1">Yang sedang kami kerjakan.</h2>
+
+    <ul class="feed">
+      {activities.map((a, i) => {
+        const Tag = a.url ? 'a' : 'div';
+        return (
+          <li class="item reveal" style={`--i:${i + 1}`}>
+            <Tag class="row-link" href={a.url} target={a.url ? '_blank' : undefined} rel={a.url ? 'noopener' : undefined}>
+              <img class="logo" src={a.logo} alt={a.alt} width="56" height="56" loading="lazy" />
+              <div class="content">
+                <div class="meta">
+                  {a.badge && <span class="badge">{a.badge}</span>}
+                  {a.sub && <span class="sub">{a.sub}</span>}
+                </div>
+                <h3>
+                  {a.title}
+                  {a.url && (
+                    <svg class="ext" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                      <path d="M6 4h6v6M12 4 4 12" />
+                    </svg>
+                  )}
+                </h3>
+                <p>{a.text}</p>
+              </div>
+            </Tag>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .activity { background: var(--sky); }
+  .h2 { margin-bottom: clamp(2.5rem, 6vw, 4rem); }
+
+  .feed { list-style: none; padding: 0; border-top: 1px solid var(--line); }
+  .item { border-bottom: 1px solid var(--line); }
+  .row-link {
+    display: flex; align-items: flex-start; gap: 1.25rem;
+    padding: clamp(1.5rem, 3.5vw, 2rem) 0;
+    text-decoration: none; color: inherit;
+  }
+  .logo {
+    flex-shrink: 0; width: 3.5rem; height: 3.5rem;
+    border-radius: 10px; object-fit: cover;
+    box-shadow: 0 0 0 1px var(--line);
+  }
+  .content { min-width: 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: 0.6rem; }
+  .badge {
+    font: 500 0.7rem/1 var(--f-mono); letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 0.3rem 0.55rem; border-radius: 3px;
+    background: var(--blue); color: var(--cream);
+  }
+  .sub {
+    font: 500 0.75rem/1 var(--f-mono); letter-spacing: 0.04em;
+    opacity: 0.55;
+  }
+  h3 { font: 600 clamp(1.15rem, 1rem + 0.6vw, 1.4rem) / 1.25 var(--f-display); letter-spacing: -0.01em; text-wrap: balance; }
+  .ext { display: inline-block; width: 0.85em; height: 0.85em; margin-left: 0.3em; vertical-align: middle; opacity: 0.5; }
+  .content p { margin-top: 0.5rem; max-width: 38rem; opacity: 0.75; font-size: 0.95rem; }
+
+  @media (max-width: 560px) {
+    .row-link { gap: 0.9rem; }
+    .logo { width: 2.75rem; height: 2.75rem; }
+  }
+</style>
