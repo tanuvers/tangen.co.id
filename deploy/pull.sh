@@ -20,6 +20,7 @@ local_rev=$(git rev-parse -q --verify HEAD || echo none)
 [ "$local_rev" = "$remote" ] && exit 0
 
 echo "[deploy] ${local_rev:0:7} -> ${remote:0:7}: $(git log -1 --format=%s FETCH_HEAD)"
+install -d -m 755 "$RELEASES"   # harus bisa dilintasi nginx (www-data), kalau tidak situs 404
 rel="$RELEASES/$remote"
 rm -rf "$rel"; mkdir -p "$rel"
 git archive FETCH_HEAD | tar -x -C "$rel"
