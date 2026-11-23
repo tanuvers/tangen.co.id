@@ -1,0 +1,9 @@
+[Unit]
+Description=tangen.co.id auto-deploy (tarik branch deploy, tukar rilis)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/tangen-deploy
+TimeoutStartSec=120
