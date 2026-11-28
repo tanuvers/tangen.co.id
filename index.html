@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT Tangen Universal Teknologi — Rekayasa Perangkat Lunak, Konsultasi IT &amp; Edukasi</title>
+  <meta name="description" content="PT Tangen Universal Teknologi berfokus pada pengembangan perangkat lunak, pemeliharaan sistem, dan konsultasi IT untuk segmen B2C, B2B, serta B2G, bersama unit khusus edukasi Tangen Academic." />
+  <meta name="theme-color" content="#1D5BD6" />
+  <!-- Favicon SVG Terkalibrasi (512x512 · Royal Sapphire #1D5BD6 · Presisi Optik) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%231D5BD6'/%3E%3Cg transform='translate(96.85000000000000000, 133.60000000000002274) scale(1.44) skewX(-5)' fill='%23F9F6EE'%3E%3Cpath d='M 27.87081950318111012,41.63653049667625083 L 52.27081950318110870,41.63653049667625083 Q 58.27081950318110870,41.63653049667625083 58.27081950318110870,47.63653049667625083 L 58.27081950318110870,122.36346950332375627 Q 58.27081950318110870,128.36346950332375627 52.27081950318110870,128.36346950332375627 L 27.87081950318111012,128.36346950332375627 Q 21.87081950318111012,128.36346950332375627 21.87081950318111012,122.36346950332375627 L 21.87081950318111012,47.63653049667625083 Q 21.87081950318111012,41.63653049667625083 27.87081950318111012,41.63653049667625083 Z'/%3E%3Cpath d='M 78.32429722878796952,0.00000000000000000 L 102.72429722878797520,0.00000000000000000 Q 108.72429722878797520,0.00000000000000000 108.72429722878797520,6.00000000000000000 L 108.72429722878797520,164.00000000000000000 Q 108.72429722878797520,170.00000000000000000 102.72429722878797520,170.00000000000000000 L 78.32429722878796952,170.00000000000000000 Q 72.32429722878796952,170.00000000000000000 72.32429722878796952,164.00000000000000000 L 72.32429722878796952,6.00000000000000000 Q 72.32429722878796952,0.00000000000000000 78.32429722878796952,0.00000000000000000 Z'/%3E%3Cpath d='M 125.31348452483904055,2.58529229255300042 L 200.84453524615804554,164.56215327778011215 Q 203.38024481660224296,170.00000000000000000 197.38024481660224296,170.00000000000000000 L 170.60411849065764045,170.00000000000000000 Q 164.60411849065764045,170.00000000000000000 162.06840892021344303,164.56215327778011215 L 125.31348452483904055,85.74096354909409001 Q 122.77777495439484312,80.30311682687418795 122.77777495439484312,74.30311682687418795 L 122.77777495439484312,3.14744557033310102 Q 122.77777495439484312,-2.85255442966689898 125.31348452483904055,2.58529229255300042 Z'/%3E%3Cpath d='M 176.09999999999999432,0.00000000000000000 L 200.50000000000000000,0.00000000000000000 Q 206.50000000000000000,0.00000000000000000 206.50000000000000000,6.00000000000000000 L 206.50000000000000000,85.72693900664749833 Q 206.50000000000000000,91.72693900664749833 200.50000000000000000,91.72693900664749833 L 187.85178044396485575,91.72693900664749833 Q 181.85178044396485575,91.72693900664749833 179.31607087352065832,86.28909228442759627 L 172.63570957044419174,71.96301123847590020 Q 170.09999999999999432,66.52516451625599814 170.09999999999999432,60.52516451625599814 L 170.09999999999999432,6.00000000000000000 Q 170.09999999999999432,0.00000000000000000 176.09999999999999432,0.00000000000000000 Z'/%3E%3C/g%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-cream: #F9F6EE;
+      --bg-cream-alt: #F2EEE3;
+      --ink: #111318;
+      --ink-muted: #4C5261;
+      --ink-subtle: #6E7587;
+      --cobalt: #1D5BD6;
+      --cobalt-dark: #1646A8;
+      --line: #D6D0C2;
+      --line-strong: #B8B09E;
+      --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --max-w: 1240px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      position: relative;
+      overflow-x: hidden;
+      background-color: var(--bg-cream);
+      min-height: 100vh;
+    }
+
+    /* Tekstur kertas editorial halus */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.024;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        padding: 0 24px;
+      }
+    }
+
+    .mono-label {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-subtle);
+    }
+
+    .mono-label.cobalt {
+      color: var(--cobalt);
+    }
+
+    /* ==========================================================================
+       TOP NAVIGATION BAR
+       ========================================================================== */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(249, 246, 238, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 12px;
+    }
+
+    @media (min-width: 640px) {
+      .topbar-inner {
+        height: 68px;
+        gap: 20px;
+      }
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 640px) {
+      .brand-link {
+        gap: 12px;
+        font-size: 19px;
+      }
+    }
+
+    .brand-link svg {
+      display: block;
+      height: 28px;
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 640px) {
+      .brand-link svg {
+        height: 30px;
+      }
+    }
+
+    .brand-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.04em;
+      color: var(--ink-subtle);
+      padding-left: 12px;
+      padding-top: 3px;
+      height: 20px;
+      border-left: 1px solid var(--line);
+      display: none;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    @media (min-width: 960px) {
+      .brand-sub {
+        display: inline-flex;
+      }
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 26px;
+    }
+
+    @media (min-width: 820px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-muted);
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--cobalt);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 640px) {
+      .nav-actions {
+        gap: 10px;
+      }
+    }
+
+    .nav-actions .btn-primary {
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    @media (min-width: 480px) {
+      .nav-actions .btn-primary {
+        padding: 10px 18px;
+        font-size: 14px;
+      }
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 40px;
+      background-color: var(--cobalt);
+      color: var(--bg-cream);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 18px;
+      border: 1px solid var(--cobalt);
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--cobalt-dark);
+      border-color: var(--cobalt-dark);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 40px;
+      background-color: transparent;
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 18px;
+      border: 1px solid var(--line-strong);
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--ink);
+      background-color: var(--bg-cream);
+    }
+
+    /* Mobile Drawer */
+    .mobile-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+
+    @media (min-width: 820px) {
+      .mobile-toggle {
+        display: none;
+      }
+    }
+
+    .mobile-menu {
+      display: none;
+      border-top: 1px solid var(--line);
+      background-color: var(--bg-cream);
+      padding: 12px 18px 20px;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      font-weight: 500;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       HERO SECTION (7:5 ARCHITECTURAL BLUEPRINT GRID)
+       ========================================================================== */
+    .hero-section {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 7fr 5fr;
+      }
+    }
+
+    .hero-main {
+      padding: 44px 0 40px;
+    }
+
+    @media (min-width: 960px) {
+      .hero-main {
+        padding: 72px 48px 64px 0;
+        border-right: 1px solid var(--line);
+      }
+    }
+
+    .hero-kicker {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .kicker-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--cobalt);
+      flex-shrink: 0;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4.5vw, 54px);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 22px;
+    }
+
+    .hero-title span {
+      color: var(--cobalt);
+    }
+
+    .hero-desc {
+      font-size: 16.5px;
+      line-height: 1.65;
+      color: var(--ink-muted);
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 480px) {
+      .hero-cta-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 48px;
+      }
+    }
+
+    .hero-specs {
+      display: grid;
+      grid-template-columns: 1fr;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      gap: 16px;
+    }
+
+    @media (min-width: 540px) {
+      .hero-specs {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+    }
+
+    .spec-item dt {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-subtle);
+      margin-bottom: 4px;
+    }
+
+    .spec-item dd {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* Hero Right Column: Monogram T-A-N Card */
+    .hero-aside {
+      padding: 36px 0 48px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @media (min-width: 960px) {
+      .hero-aside {
+        padding: 56px 0 56px 44px;
+        border-top: none;
+      }
+    }
+
+    .identity-card {
+      border: 1px solid var(--line-strong);
+      background-color: var(--bg-cream);
+    }
+
+    .identity-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      background-color: var(--bg-cream);
+    }
+
+    .identity-stage {
+      padding: 24px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg-cream);
+      background-image:
+        linear-gradient(to right, rgba(17, 19, 24, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(17, 19, 24, 0.045) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    @media (min-width: 640px) {
+      .identity-stage {
+        padding: 28px 24px;
+      }
+    }
+
+    .identity-stage svg {
+      display: block;
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+    }
+
+    @media (min-width: 640px) {
+      .identity-stage svg {
+        max-width: 310px;
+      }
+    }
+
+    .identity-body {
+      padding: 18px 16px 16px;
+      border-top: 1px solid var(--line);
+      background-color: var(--bg-cream);
+    }
+
+    .identity-caption {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--ink-muted);
+      margin-bottom: 14px;
+    }
+
+    .tan-toggle-group {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    @media (min-width: 480px) {
+      .tan-toggle-group {
+        gap: 10px;
+      }
+    }
+
+    .tan-toggle-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 44px;
+      padding: 10px 10px;
+      border: 1px solid var(--line-strong);
+      background-color: var(--bg-cream);
+      color: var(--ink-muted);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      transition: all 0.15s ease;
+    }
+
+    @media (min-width: 480px) {
+      .tan-toggle-btn {
+        padding: 10px 12px;
+      }
+    }
+
+    .tan-toggle-btn:hover {
+      border-color: var(--cobalt);
+      color: var(--ink);
+    }
+
+    .tan-toggle-btn.active {
+      background-color: var(--cobalt);
+      border-color: var(--cobalt);
+      color: var(--bg-cream);
+    }
+
+    .tan-check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border: 1px solid currentColor;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    .tan-toggle-btn .tan-check::after {
+      content: "";
+    }
+
+    .tan-toggle-btn.active .tan-check::after {
+      content: "✓";
+    }
+
+    .identity-status-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-muted);
+    }
+
+    .btn-reset-tan {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--cobalt);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ==========================================================================
+       SECTION ARCHITECTURE
+       ========================================================================== */
+    .section-block {
+      border-bottom: 1px solid var(--line);
+      padding: 56px 0;
+    }
+
+    @media (min-width: 768px) {
+      .section-block {
+        padding: 76px 0;
+      }
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 44px;
+    }
+
+    @media (min-width: 820px) {
+      .section-header {
+        grid-template-columns: 5fr 7fr;
+        align-items: end;
+      }
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3.2vw, 38px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-top: 8px;
+    }
+
+    .section-lead {
+      font-size: 16px;
+      color: var(--ink-muted);
+      max-width: 640px;
+    }
+
+    /* 01 // Struktur Operasi */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      border: 1px solid var(--line-strong);
+    }
+
+    @media (min-width: 860px) {
+      .pillars-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .pillar-card {
+      padding: 28px 22px;
+      background-color: var(--bg-cream);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @media (min-width: 640px) {
+      .pillar-card {
+        padding: 36px 32px;
+      }
+    }
+
+    .pillar-card:first-child {
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    @media (min-width: 860px) {
+      .pillar-card:first-child {
+        border-bottom: none;
+        border-right: 1px solid var(--line-strong);
+      }
+    }
+
+    .pillar-card.academic {
+      background-color: var(--bg-cream);
+    }
+
+    .pillar-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 4px 8px;
+      border: 1px solid var(--cobalt);
+      color: var(--cobalt);
+      margin-bottom: 18px;
+    }
+
+    .pillar-title {
+      font-family: var(--font-display);
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    .pillar-desc {
+      color: var(--ink-muted);
+      margin-bottom: 26px;
+      font-size: 15px;
+    }
+
+    .pillar-list {
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .pillar-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .pillar-list li:last-child {
+      border-bottom: none;
+    }
+
+    .pillar-list span {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--cobalt);
+      flex-shrink: 0;
+    }
+
+    /* 02 // Karya & Produk */
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 860px) {
+      .work-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+    }
+
+    .work-card {
+      border: 1px solid var(--line-strong);
+      background-color: var(--bg-cream);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+    }
+
+    @media (min-width: 640px) {
+      .work-card {
+        padding: 28px;
+      }
+    }
+
+    .work-card:hover {
+      border-color: var(--cobalt);
+    }
+
+    .work-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .work-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 3px 8px;
+      background-color: var(--bg-cream);
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+
+    .work-badge.primary {
+      background-color: var(--cobalt);
+      border-color: var(--cobalt);
+      color: var(--bg-cream);
+    }
+
+    .work-badge.paused {
+      background-color: var(--bg-cream);
+      border-color: var(--line-strong);
+      color: var(--ink-muted);
+    }
+
+    .work-title {
+      font-family: var(--font-display);
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin-bottom: 12px;
+    }
+
+    .work-desc {
+      font-size: 14.5px;
+      color: var(--ink-muted);
+      margin-bottom: 24px;
+    }
+
+    .work-footer {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--cobalt);
+    }
+
+    .work-footer.muted {
+      color: var(--ink-subtle);
+    }
+
+    /* 03 // Filosofi Geometri Tangen */
+    .tangent-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      border: 1px solid var(--line-strong);
+      background-color: var(--bg-cream);
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .tangent-grid {
+        grid-template-columns: 5fr 7fr;
+      }
+    }
+
+    .tangent-canvas-box {
+      padding: 32px 22px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (min-width: 900px) {
+      .tangent-canvas-box {
+        padding: 40px 20px 40px 36px;
+      }
+    }
+
+    .tangent-canvas-box svg {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      display: block;
+      overflow: hidden;
+    }
+
+    .tangent-controls {
+      width: 100%;
+      max-width: 280px;
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .tangent-controls label {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-muted);
+      margin-bottom: 8px;
+    }
+
+    .tangent-controls input[type="range"] {
+      width: 100%;
+      accent-color: var(--cobalt);
+      cursor: pointer;
+    }
+
+    .tangent-copy {
+      padding: 12px 22px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @media (min-width: 900px) {
+      .tangent-copy {
+        padding: 40px 36px 40px 24px;
+      }
+    }
+
+    .tangent-copy h3 {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3vw, 30px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 8px 0 16px;
+    }
+
+    .tangent-copy p {
+      color: var(--ink-muted);
+      margin-bottom: 16px;
+      font-size: 15.5px;
+    }
+
+    .tangent-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 04 // Cara Kerja */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      border-top: 1px solid var(--line-strong);
+      border-left: 1px solid var(--line-strong);
+    }
+
+    @media (min-width: 640px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 960px) {
+      .steps-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .step-cell {
+      padding: 26px 22px;
+      border-right: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+      background-color: var(--bg-cream);
+    }
+
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--cobalt);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .step-cell h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .step-cell p {
+      font-size: 14px;
+      color: var(--ink-muted);
+    }
+
+    /* ==========================================================================
+       FULL-BLEED COBALT CONTACT & FOOTER
+       ========================================================================== */
+    .contact-banner {
+      position: relative;
+      background-color: var(--cobalt);
+      color: var(--bg-cream);
+      padding: 60px 0 40px;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .contact-banner {
+        padding: 80px 0 48px;
+      }
+    }
+
+    .contact-watermark {
+      position: absolute;
+      right: -28px;
+      bottom: 16px;
+      width: 220px;
+      height: auto;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    @media (min-width: 768px) {
+      .contact-watermark {
+        right: -20px;
+        bottom: 24px;
+        width: 340px;
+      }
+    }
+
+    .contact-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(249, 246, 238, 0.22);
+    }
+
+    @media (min-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 7fr 5fr;
+        align-items: start;
+        gap: 44px;
+      }
+    }
+
+    .contact-banner .mono-label {
+      color: rgba(249, 246, 238, 0.78);
+    }
+
+    .contact-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      margin: 14px 0 16px;
+    }
+
+    .contact-desc {
+      color: rgba(249, 246, 238, 0.88);
+      max-width: 540px;
+      margin-bottom: 26px;
+      font-size: 15.5px;
+    }
+
+    .topic-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 26px;
+    }
+
+    .topic-pill {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 7px 12px;
+      border: 1px solid rgba(249, 246, 238, 0.38);
+      color: var(--bg-cream);
+      background: transparent;
+      transition: all 0.15s ease;
+    }
+
+    .topic-pill.active,
+    .topic-pill:hover {
+      background-color: var(--bg-cream);
+      color: var(--cobalt);
+      border-color: var(--bg-cream);
+    }
+
+    .contact-cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    @media (min-width: 540px) {
+      .contact-cta-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+    }
+
+    .btn-cream {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      background-color: var(--bg-cream);
+      color: var(--cobalt);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 20px;
+      border: 1px solid var(--bg-cream);
+      transition: opacity 0.15s ease;
+    }
+
+    .btn-cream:hover {
+      opacity: 0.92;
+    }
+
+    .btn-cream-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      background-color: transparent;
+      color: var(--bg-cream);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 20px;
+      border: 1px solid rgba(249, 246, 238, 0.5);
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .btn-cream-outline:hover {
+      border-color: var(--bg-cream);
+      background-color: rgba(249, 246, 238, 0.1);
+    }
+
+    .office-box {
+      border: 1px solid rgba(249, 246, 238, 0.28);
+      background-color: rgba(17, 19, 24, 0.14);
+      padding: 22px 18px;
+    }
+
+    @media (min-width: 640px) {
+      .office-box {
+        padding: 28px 24px;
+      }
+    }
+
+    .office-row {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(249, 246, 238, 0.2);
+    }
+
+    .office-row:first-child {
+      padding-top: 0;
+    }
+
+    .office-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .office-row dt {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(249, 246, 238, 0.72);
+      margin-bottom: 4px;
+    }
+
+    .office-row dd {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--bg-cream);
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .office-row dd a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Footer Bottom Row */
+    .footer-bottom {
+      position: relative;
+      z-index: 2;
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom {
+        padding-top: 28px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+      }
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 20px;
+      font-size: 13.5px;
+      color: rgba(249, 246, 238, 0.85);
+    }
+
+    .footer-nav a:hover {
+      color: var(--bg-cream);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.5;
+      color: rgba(249, 246, 238, 0.78);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       HEADER / TOP NAVIGATION
+       ======================================================================== -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand-group">
+        <a href="#top" class="brand-link" aria-label="PT Tangen Universal Teknologi">
+          <!-- Logo Standar Transparan Terkalibrasi (Royal Sapphire #1D5BD6, tanpa latar kotak) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 349.06524205845239910 311" aria-hidden="true">
+            <g transform="translate(11.31524205845239910, 28) scale(1.5) skewX(-5)" fill="#1D5BD6">
+              <path d="M 27.87081950318111012,41.63653049667625083 L 52.27081950318110870,41.63653049667625083 Q 58.27081950318110870,41.63653049667625083 58.27081950318110870,47.63653049667625083 L 58.27081950318110870,122.36346950332375627 Q 58.27081950318110870,128.36346950332375627 52.27081950318110870,128.36346950332375627 L 27.87081950318111012,128.36346950332375627 Q 21.87081950318111012,128.36346950332375627 21.87081950318111012,122.36346950332375627 L 21.87081950318111012,47.63653049667625083 Q 21.87081950318111012,41.63653049667625083 27.87081950318111012,41.63653049667625083 Z" />
+              <path d="M 78.32429722878796952,0.00000000000000000 L 102.72429722878797520,0.00000000000000000 Q 108.72429722878797520,0.00000000000000000 108.72429722878797520,6.00000000000000000 L 108.72429722878797520,164.00000000000000000 Q 108.72429722878797520,170.00000000000000000 102.72429722878797520,170.00000000000000000 L 78.32429722878796952,170.00000000000000000 Q 72.32429722878796952,170.00000000000000000 72.32429722878796952,164.00000000000000000 L 72.32429722878796952,6.00000000000000000 Q 72.32429722878796952,0.00000000000000000 78.32429722878796952,0.00000000000000000 Z" />
+              <path d="M 125.31348452483904055,2.58529229255300042 L 200.84453524615804554,164.56215327778011215 Q 203.38024481660224296,170.00000000000000000 197.38024481660224296,170.00000000000000000 L 170.60411849065764045,170.00000000000000000 Q 164.60411849065764045,170.00000000000000000 162.06840892021344303,164.56215327778011215 L 125.31348452483904055,85.74096354909409001 Q 122.77777495439484312,80.30311682687418795 122.77777495439484312,74.30311682687418795 L 122.77777495439484312,3.14744557033310102 Q 122.77777495439484312,-2.85255442966689898 125.31348452483904055,2.58529229255300042 Z" />
+              <path d="M 176.09999999999999432,0.00000000000000000 L 200.50000000000000000,0.00000000000000000 Q 206.50000000000000000,0.00000000000000000 206.50000000000000000,6.00000000000000000 L 206.50000000000000000,85.72693900664749833 Q 206.50000000000000000,91.72693900664749833 200.50000000000000000,91.72693900664749833 L 187.85178044396485575,91.72693900664749833 Q 181.85178044396485575,91.72693900664749833 179.31607087352065832,86.28909228442759627 L 172.63570957044419174,71.96301123847590020 Q 170.09999999999999432,66.52516451625599814 170.09999999999999432,60.52516451625599814 L 170.09999999999999432,6.00000000000000000 Q 170.09999999999999432,0.00000000000000000 176.09999999999999432,0.00000000000000000 Z" />
+            </g>
+          </svg>
+          <span>Tangen</span>
+        </a>
+        <span class="brand-sub">PT TANGEN UNIVERSAL TEKNOLOGI</span>
+      </div>
+
+      <nav class="nav-links" aria-label="Navigasi Utama">
+        <a href="#struktur">Struktur</a>
+        <a href="#karya">Karya &amp; Produk</a>
+        <a href="#filosofi">Filosofi</a>
+        <a href="#proses">Cara Kerja</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#kontak" class="btn-primary">Diskusi Proyek</a>
+        <button type="button" class="mobile-toggle" id="mobileMenuBtn" aria-label="Buka menu navigasi" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 6h14M3 10h14M3 14h14" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#struktur">01 // Struktur Operasi</a>
+      <a href="#karya">02 // Karya &amp; Produk</a>
+      <a href="#filosofi">03 // Filosofi Tangen</a>
+      <a href="#proses">04 // Cara Kerja</a>
+      <a href="#kontak" class="btn-primary">Hubungi Kami</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ======================================================================
+         1. HERO SECTION
+         ====================================================================== -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <!-- Kolom Kiri (7 bagian): Proposisi Nilai Utama -->
+        <div class="hero-main">
+          <div class="hero-kicker">
+            <span class="kicker-dot" aria-hidden="true"></span>
+            <span class="mono-label cobalt">PT TANGEN UNIVERSAL TEKNOLOGI</span>
+          </div>
+
+          <h1 class="hero-title">
+            Rekayasa Perangkat Lunak &amp; Solusi IT yang <span>Presisi.</span>
+          </h1>
+
+          <p class="hero-desc">
+            Kami mendampingi organisasi dan individu melalui pengembangan perangkat lunak kustom, pemeliharaan keandalan sistem, serta konsultasi teknologi informasi lintas segmen B2C, B2B, hingga B2G—sekaligus membangun ekosistem edukasi melalui unit khusus <strong>Tangen Academic</strong>.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#kontak" class="btn-primary">
+              <span>Mulai Diskusi Proyek</span>
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M2 8h11M9 4l4 4-4 4" />
+              </svg>
+            </a>
+            <a href="#struktur" class="btn-outline">Lihat Struktur Operasi</a>
+          </div>
+
+          <dl class="hero-specs">
+            <div class="spec-item">
+              <dt>Cakupan Mitra</dt>
+              <dd>B2C · B2B · B2G</dd>
+            </div>
+            <div class="spec-item">
+              <dt>Unit Edukasi</dt>
+              <dd>Tangen Academic</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Kolom Kanan (5 bagian): Kartu Identitas Monogram T-A-N Interaktif -->
+        <aside class="hero-aside" aria-label="Identitas Monogram Tangen">
+          <div class="identity-card">
+            <div class="identity-card-header">
+              <span class="mono-label">IDENTITAS // MONOGRAM T-A-N</span>
+              <span class="mono-label cobalt">KONSTRUKSI HURUF</span>
+            </div>
+
+            <div class="identity-stage" id="logoPreviewStage">
+              <!-- Logo Standar Presisi 17 Desimal Terkalibrasi Tanpa Latar Kotak -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 349.06524205845239910 311" role="img" aria-label="Monogram abstrak yang membentuk siluet figur menyapa T-A-N PT Tangen Universal Teknologi">
+                <g transform="translate(11.31524205845239910, 28) scale(1.5) skewX(-5)">
+                  <!-- Potongan 1 (paling kiri) -->
+                  <path data-piece="1" fill="#1D5BD6" d="M 27.87081950318111012,41.63653049667625083 L 52.27081950318110870,41.63653049667625083 Q 58.27081950318110870,41.63653049667625083 58.27081950318110870,47.63653049667625083 L 58.27081950318110870,122.36346950332375627 Q 58.27081950318110870,128.36346950332375627 52.27081950318110870,128.36346950332375627 L 27.87081950318111012,128.36346950332375627 Q 21.87081950318111012,128.36346950332375627 21.87081950318111012,122.36346950332375627 L 21.87081950318111012,47.63653049667625083 Q 21.87081950318111012,41.63653049667625083 27.87081950318111012,41.63653049667625083 Z" />
+                  <!-- Potongan 2 (tegak) -->
+                  <path data-piece="2" fill="#1D5BD6" d="M 78.32429722878796952,0.00000000000000000 L 102.72429722878797520,0.00000000000000000 Q 108.72429722878797520,0.00000000000000000 108.72429722878797520,6.00000000000000000 L 108.72429722878797520,164.00000000000000000 Q 108.72429722878797520,170.00000000000000000 102.72429722878797520,170.00000000000000000 L 78.32429722878796952,170.00000000000000000 Q 72.32429722878796952,170.00000000000000000 72.32429722878796952,164.00000000000000000 L 72.32429722878796952,6.00000000000000000 Q 72.32429722878796952,0.00000000000000000 78.32429722878796952,0.00000000000000000 Z" />
+                  <!-- Potongan 3 (diagonal) -->
+                  <path data-piece="3" fill="#1D5BD6" d="M 125.31348452483904055,2.58529229255300042 L 200.84453524615804554,164.56215327778011215 Q 203.38024481660224296,170.00000000000000000 197.38024481660224296,170.00000000000000000 L 170.60411849065764045,170.00000000000000000 Q 164.60411849065764045,170.00000000000000000 162.06840892021344303,164.56215327778011215 L 125.31348452483904055,85.74096354909409001 Q 122.77777495439484312,80.30311682687418795 122.77777495439484312,74.30311682687418795 L 122.77777495439484312,3.14744557033310102 Q 122.77777495439484312,-2.85255442966689898 125.31348452483904055,2.58529229255300042 Z" />
+                  <!-- Potongan 4 (paling kanan) -->
+                  <path data-piece="4" fill="#1D5BD6" d="M 176.09999999999999432,0.00000000000000000 L 200.50000000000000000,0.00000000000000000 Q 206.50000000000000000,0.00000000000000000 206.50000000000000000,6.00000000000000000 L 206.50000000000000000,85.72693900664749833 Q 206.50000000000000000,91.72693900664749833 200.50000000000000000,91.72693900664749833 L 187.85178044396485575,91.72693900664749833 Q 181.85178044396485575,91.72693900664749833 179.31607087352065832,86.28909228442759627 L 172.63570957044419174,71.96301123847590020 Q 170.09999999999999432,66.52516451625599814 170.09999999999999432,60.52516451625599814 L 170.09999999999999432,6.00000000000000000 Q 170.09999999999999432,0.00000000000000000 176.09999999999999432,0.00000000000000000 Z" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="identity-body">
+              <p class="identity-caption">
+                Marka Tangen merupakan monogram abstrak yang membentuk siluet figur menyapa dari gabungan huruf <strong>T</strong>, <strong>A</strong>, dan <strong>N</strong>. Aktifkan tombol huruf di bawah untuk menyorot potongan pembentuknya.
+              </p>
+
+              <div class="tan-toggle-group" role="group" aria-label="Pilih huruf monogram T, A, N">
+                <button type="button" class="tan-toggle-btn active" data-letter="T" aria-pressed="true">
+                  <span>T</span>
+                  <span class="tan-check" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="tan-toggle-btn active" data-letter="A" aria-pressed="true">
+                  <span>A</span>
+                  <span class="tan-check" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="tan-toggle-btn active" data-letter="N" aria-pressed="true">
+                  <span>N</span>
+                  <span class="tan-check" aria-hidden="true"></span>
+                </button>
+              </div>
+
+              <div class="identity-status-bar">
+                <span id="tanActiveSummary">MODE: MONOGRAM UTUH (4 POTONGAN AKTIF)</span>
+                <button type="button" class="btn-reset-tan" id="tanResetBtn">Reset</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. STRUKTUR OPERASI (#struktur)
+         ====================================================================== -->
+    <section class="section-block" id="struktur">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="mono-label cobalt">01 // STRUKTUR OPERASI</span>
+            <h2 class="section-title">Inti Teknologi &amp; Satu Unit Khusus Edukasi.</h2>
+          </div>
+          <p class="section-lead">
+            PT Tangen Universal Teknologi memusatkan kapabilitas utamanya pada rekayasa perangkat lunak dan layanan teknologi informasi menyeluruh, didampingi oleh satu unit khusus yang menangani pengembangan kompetensi dan penyelenggaraan acara edukasi.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <!-- Kolom 1: PT Tangen Universal Teknologi -->
+          <article class="pillar-card">
+            <div>
+              <span class="pillar-tag">ENTITAS UTAMA · B2C · B2B · B2G</span>
+              <h3 class="pillar-title">PT Tangen Universal Teknologi</h3>
+              <p class="pillar-desc">
+                Beroperasi di bidang teknologi informasi secara menyeluruh—mulai dari perancangan dan pembangunan perangkat lunak (<em>software development</em>), pemeliharaan sistem berkelanjutan (<em>system maintenance</em>), hingga konsultasi strategi dan arsitektur IT untuk kebutuhan konsumen individu (B2C), korporasi (B2B), maupun instansi pemerintahan (B2G).
+              </p>
+            </div>
+
+            <ul class="pillar-list">
+              <li>
+                <span>DEV</span>
+                <div>Pengembangan aplikasi web, mobile, dan perangkat lunak kustom sesuai alur kerja organisasi.</div>
+              </li>
+              <li>
+                <span>MNT</span>
+                <div>Pemeliharaan rutin, pemantauan performa, serta penguatan keandalan infrastruktur digital.</div>
+              </li>
+              <li>
+                <span>CON</span>
+                <div>Konsultasi teknis, audit sistem, dan transformasi digital lintas sektor B2C, B2B, dan B2G.</div>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Kolom 2: Tangen Academic -->
+          <article class="pillar-card academic">
+            <div>
+              <span class="pillar-tag">UNIT KHUSUS EDUKASI</span>
+              <h3 class="pillar-title">Tangen Academic</h3>
+              <p class="pillar-desc">
+                Satu-satunya unit khusus edukasi di bawah PT Tangen Universal Teknologi yang berfokus pada peningkatan literasi teknologi, pelatihan terapan, lokakarya, serta penyelenggaraan acara edukatif—termasuk mengelola <strong>TangenFest</strong> sebagai agenda festival tahunan perusahaan.
+              </p>
+            </div>
+
+            <ul class="pillar-list">
+              <li>
+                <span>EDU</span>
+                <div>Program pelatihan teknologi praktis dan kelas pengembangan keterampilan digital terstruktur.</div>
+              </li>
+              <li>
+                <span>EVT</span>
+                <div>Penyelenggaraan seminar, lokakarya, dan forum kolaborasi industri-akademisi.</div>
+              </li>
+              <li>
+                <span>ANN</span>
+                <div>Pengelolaan <strong>TangenFest</strong>, perhelatan tahunan yang mempertemukan talenta dan praktisi digital.</div>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. KARYA & PRODUK (#karya)
+         ====================================================================== -->
+    <section class="section-block" id="karya">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="mono-label cobalt">02 // KARYA &amp; PRODUK</span>
+            <h2 class="section-title">Inisiatif Produk &amp; Keandalan Sistem.</h2>
+          </div>
+          <p class="section-lead">
+            Cuplikan tiga jejak terbaru dari sistem operasional, produk digital, dan agenda edukasi yang telah kami rancang maupun kelola bersama berbagai mitra.
+          </p>
+        </div>
+
+        <div class="work-grid">
+          <!-- Kartu 1: Belajaris.com -->
+          <article class="work-card">
+            <div>
+              <div class="work-top">
+                <span class="mono-label">PRODUK PT TANGEN</span>
+                <span class="work-badge paused">PENYESUAIAN INTERNAL</span>
+              </div>
+              <h3 class="work-title">Belajaris.com</h3>
+              <p class="work-desc">
+                Platform pembelajaran digital yang dikembangkan oleh PT Tangen Universal Teknologi untuk mendukung proses belajar mandiri. Saat ini layanan <strong>Belajaris.com</strong> sedang dinonaktifkan sementara sehubungan dengan penyesuaian internal serta penyelarasan arah pengembangan ke depan.
+              </p>
+            </div>
+            <div class="work-footer muted">
+              <span>STATUS: NONAKTIF SEMENTARA</span>
+              <span>EDTECH</span>
+            </div>
+          </article>
+
+          <!-- Kartu 2: PLN UAIL & OTL -->
+          <article class="work-card">
+            <div>
+              <div class="work-top">
+                <span class="mono-label">MITRA</span>
+                <span class="work-badge primary">AKTIF</span>
+              </div>
+              <h3 class="work-title">Sistem Otomasi Internal PLN</h3>
+              <p class="work-desc">
+                Pemeliharaan rutin dan peningkatan performa dua sistem otomasi internal (<strong>UAIL &amp; OTL</strong>) untuk mendukung kelancaran operasional beberapa ULP di wilayah Surabaya Utara.
+              </p>
+            </div>
+            <div class="work-footer">
+              <span>UAIL &amp; OTL MAINTENANCE</span>
+              <span>SBU</span>
+            </div>
+          </article>
+
+          <!-- Kartu 3: TangenFest -->
+          <article class="work-card">
+            <div>
+              <div class="work-top">
+                <span class="mono-label">TANGEN ACADEMIC</span>
+                <span class="work-badge">EVENT TAHUNAN</span>
+              </div>
+              <h3 class="work-title">TangenFest</h3>
+              <p class="work-desc">
+                Agenda tahunan yang dinaungi oleh unit khusus edukasi <strong>Tangen Academic</strong> sebagai wadah berbagi wawasan teknologi, sesi diskusi praktisi, dan pameran inovasi digital bagi pelajar, mahasiswa, maupun profesional.
+              </p>
+            </div>
+            <div class="work-footer">
+              <span>ANNUAL FLAGSHIP EVENT</span>
+              <span>ACADEMIC</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. FILOSOFI TANGEN (#filosofi)
+         ====================================================================== -->
+    <section class="section-block" id="filosofi">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="mono-label cobalt">03 // FILOSOFI</span>
+            <h2 class="section-title">Presisi Satu Titik Singgung.</h2>
+          </div>
+          <p class="section-lead">
+            Nama Tangen berakar dari prinsip geometri yang menjadi landasan cara kami merancang dan mengeksekusi solusi.
+          </p>
+        </div>
+
+        <div class="tangent-grid">
+          <!-- Diagram Geometri Interaktif -->
+          <div class="tangent-canvas-box">
+            <svg viewBox="0 0 320 320" fill="none" overflow="hidden" role="img" aria-label="Diagram interaktif lingkaran dan garis singgung tangen">
+              <!-- Sumbu X dan Y Tengah -->
+              <line x1="0" y1="160" x2="320" y2="160" stroke="#C8C1B2" stroke-width="1" />
+              <line x1="160" y1="0" x2="160" y2="320" stroke="#C8C1B2" stroke-width="1" />
+
+              <!-- Lingkaran Dalam Garis Putus-Putus -->
+              <circle cx="160" cy="160" r="84" stroke="#111318" stroke-width="1.5" stroke-dasharray="5 5" />
+              <circle cx="160" cy="160" r="3" fill="#111318" />
+
+              <g id="tangentGroup" transform="rotate(0 160 160)">
+                <line id="tangentRadius" x1="160" y1="160" x2="160" y2="76" stroke="#737A8C" stroke-width="1.2" stroke-dasharray="3 3" />
+                <line id="tangentLine" x1="-300" y1="76" x2="620" y2="76" stroke="#1D5BD6" stroke-width="2.5" />
+                <circle id="tangentPoint" cx="160" cy="76" r="5.5" fill="#1D5BD6" />
+              </g>
+            </svg>
+
+            <div class="tangent-controls">
+              <label for="tangentAngle">
+                <span>SUDUT TITIK SINGGUNG</span>
+                <span id="tangentAngleVal">0°</span>
+              </label>
+              <input id="tangentAngle" type="range" min="0" max="360" value="0" />
+            </div>
+          </div>
+
+          <!-- Narasi Filosofi -->
+          <div class="tangent-copy">
+            <span class="mono-label cobalt">ESENSI NAMA TANGEN</span>
+            <h3>Menyentuh satu titik, lalu melaju lurus.</h3>
+            <p>
+              Dalam geometri, garis tangen hanya menyentuh kurva pada tepat satu titik singgung sebelum melaju lurus tanpa hambatan. Kami menerapkan prinsip yang sama: tidak membuat sistem yang rumit tanpa arah, melainkan menemukan akar persoalan klien dan menyelesaikannya secara presisi, menyentuh hanya bagian yang perlu disentuh dan langsung menuntaskannya tanpa melebar ke hal yang tidak perlu.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. CARA KERJA (#proses)
+         ====================================================================== -->
+    <section class="section-block" id="proses">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="mono-label cobalt">04 // CARA KERJA</span>
+            <h2 class="section-title">Empat Langkah, Satu Arah.</h2>
+          </div>
+          <p class="section-lead">
+            Alur kerja terstruktur agar setiap keputusan teknis terukur sejak awal perencanaan hingga pemeliharaan jangka panjang.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-cell">
+            <span class="step-num">01 // PAHAMI</span>
+            <h3>Pemetaan Masalah</h3>
+            <p>Membedah kebutuhan operasional, pengguna, dan sasaran bisnis sebelum satu baris kode ditulis.</p>
+          </div>
+          <div class="step-cell">
+            <span class="step-num">02 // RANCANG</span>
+            <h3>Arsitektur &amp; Purwarupa</h3>
+            <p>Menyepakati alur sistem, struktur data, dan antarmuka lewat rancangan yang terukur.</p>
+          </div>
+          <div class="step-cell">
+            <span class="step-num">03 // BANGUN</span>
+            <h3>Rekayasa Bertahap</h3>
+            <p>Pengembangan modular dengan rilis berkala agar kemajuan sistem dapat diuji secara langsung.</p>
+          </div>
+          <div class="step-cell">
+            <span class="step-num">04 // RAWAT</span>
+            <h3>Pemeliharaan &amp; Optimasi</h3>
+            <p>Pemantauan stabilitas, pembaruan fitur, dan dukungan teknis berkelanjutan setelah sistem berjalan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       6. KONTAK & FOOTER (#kontak)
+       ======================================================================== -->
+  <footer class="contact-banner" id="kontak">
+    <!-- Watermark Logo Standar Transparan Terkalibrasi (Shape #F9F6EE, tanpa latar kotak) -->
+    <svg class="contact-watermark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 349.06524205845239910 311" aria-hidden="true">
+      <g transform="translate(11.31524205845239910, 28) scale(1.5) skewX(-5)" fill="#F9F6EE">
+        <path d="M 27.87081950318111012,41.63653049667625083 L 52.27081950318110870,41.63653049667625083 Q 58.27081950318110870,41.63653049667625083 58.27081950318110870,47.63653049667625083 L 58.27081950318110870,122.36346950332375627 Q 58.27081950318110870,128.36346950332375627 52.27081950318110870,128.36346950332375627 L 27.87081950318111012,128.36346950332375627 Q 21.87081950318111012,128.36346950332375627 21.87081950318111012,122.36346950332375627 L 21.87081950318111012,47.63653049667625083 Q 21.87081950318111012,41.63653049667625083 27.87081950318111012,41.63653049667625083 Z" />
+        <path d="M 78.32429722878796952,0.00000000000000000 L 102.72429722878797520,0.00000000000000000 Q 108.72429722878797520,0.00000000000000000 108.72429722878797520,6.00000000000000000 L 108.72429722878797520,164.00000000000000000 Q 108.72429722878797520,170.00000000000000000 102.72429722878797520,170.00000000000000000 L 78.32429722878796952,170.00000000000000000 Q 72.32429722878796952,170.00000000000000000 72.32429722878796952,164.00000000000000000 L 72.32429722878796952,6.00000000000000000 Q 72.32429722878796952,0.00000000000000000 78.32429722878796952,0.00000000000000000 Z" />
+        <path d="M 125.31348452483904055,2.58529229255300042 L 200.84453524615804554,164.56215327778011215 Q 203.38024481660224296,170.00000000000000000 197.38024481660224296,170.00000000000000000 L 170.60411849065764045,170.00000000000000000 Q 164.60411849065764045,170.00000000000000000 162.06840892021344303,164.56215327778011215 L 125.31348452483904055,85.74096354909409001 Q 122.77777495439484312,80.30311682687418795 122.77777495439484312,74.30311682687418795 L 122.77777495439484312,3.14744557033310102 Q 122.77777495439484312,-2.85255442966689898 125.31348452483904055,2.58529229255300042 Z" />
+        <path d="M 176.09999999999999432,0.00000000000000000 L 200.50000000000000000,0.00000000000000000 Q 206.50000000000000000,0.00000000000000000 206.50000000000000000,6.00000000000000000 L 206.50000000000000000,85.72693900664749833 Q 206.50000000000000000,91.72693900664749833 200.50000000000000000,91.72693900664749833 L 187.85178044396485575,91.72693900664749833 Q 181.85178044396485575,91.72693900664749833 179.31607087352065832,86.28909228442759627 L 172.63570957044419174,71.96301123847590020 Q 170.09999999999999432,66.52516451625599814 170.09999999999999432,60.52516451625599814 L 170.09999999999999432,6.00000000000000000 Q 170.09999999999999432,0.00000000000000000 176.09999999999999432,0.00000000000000000 Z" />
+      </g>
+    </svg>
+
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <span class="mono-label">05 // KONTAK &amp; KOLABORASI</span>
+          <h2 class="contact-title">Siap menjadi mitra teknologi Anda.</h2>
+          <p class="contact-desc">
+            Pilih topik kebutuhan Anda di bawah atau hubungi langsung tim kami melalui WhatsApp dan surat elektronik. Kami merespons setiap pertanyaan dalam satu hari kerja.
+          </p>
+
+          <div class="topic-pills" role="group" aria-label="Pilih topik diskusi">
+            <button type="button" class="topic-pill active" data-topic="Pengembangan Perangkat Lunak">Software Development</button>
+            <button type="button" class="topic-pill" data-topic="Pemeliharaan &amp; Konsultasi IT">Maintenance &amp; Konsultasi IT</button>
+            <button type="button" class="topic-pill" data-topic="Program Edukasi Tangen Academic">Tangen Academic</button>
+          </div>
+
+          <div class="contact-cta-group">
+            <a id="waConsultBtn" class="btn-cream" href="https://wa.me/6281997357609?text=Halo%20PT%20Tangen%20Universal%20Teknologi%2C%20saya%20ingin%20berdiskusi%20mengenai%20Pengembangan%20Perangkat%20Lunak." target="_blank" rel="noopener">
+              <span>WhatsApp: +62 819-9735-7609</span>
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M2 8h11M9 4l4 4-4 4" />
+              </svg>
+            </a>
+            <a id="emailConsultBtn" class="btn-cream-outline" href="mailto:halo@tangen.co.id?subject=Diskusi%20Proyek%20%E2%80%94%20Pengembangan%20Perangkat%20Lunak">
+              <span>halo@tangen.co.id</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Informasi Kantor & Kontak Resmi -->
+        <div class="office-box">
+          <dl>
+            <div class="office-row">
+              <dt>Entitas Hukum</dt>
+              <dd>PT Tangen Universal Teknologi</dd>
+            </div>
+            <div class="office-row">
+              <dt>Telepon / WhatsApp</dt>
+              <dd>
+                <a href="https://wa.me/6281997357609" target="_blank" rel="noopener">+62 819-9735-7609</a>
+              </dd>
+            </div>
+            <div class="office-row">
+              <dt>Surat Elektronik</dt>
+              <dd>
+                <a href="mailto:halo@tangen.co.id">halo@tangen.co.id</a>
+              </dd>
+            </div>
+            <div class="office-row">
+              <dt>Alamat Kantor</dt>
+              <dd>
+                <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Menganti+No.+728A+Kec.+Menganti+Kab.+Gresik" target="_blank" rel="noopener">
+                  Jl. Menganti No. 728A, Kec. Menganti, Kab. Gresik
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Baris Bawah Footer (Tanpa logo kecil di samping hak cipta) -->
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 PT Tangen Universal Teknologi. Seluruh hak dilindungi.</span>
+
+        <nav class="footer-nav" aria-label="Navigasi Footer">
+          <a href="#top">Ke Atas</a>
+          <a href="#struktur">Struktur</a>
+          <a href="#karya">Karya &amp; Produk</a>
+          <a href="#filosofi">Filosofi</a>
+          <a href="#proses">Cara Kerja</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       INTERAKTIVITAS: MOBILE MENU, MONOGRAM T-A-N, TANGENT GEOMETRY, KONSULTASI
+       ======================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // 1. Mobile Navigation Drawer
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', function () {
+          const isOpen = mobileMenu.classList.toggle('open');
+          mobileBtn.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            mobileMenu.classList.remove('open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // 2. Kontrol Toggle Huruf T-A-N pada Monogram
+      // Pemetaan huruf T, A, N ke potongan logo (1 = kiri, 2 = tegak, 3 = diagonal, 4 = kanan)
+      const LETTER_PIECES_MAP = {
+        T: [1, 2],
+        A: [2, 3],
+        N: [2, 3, 4]
+      };
+
+      const selectedLetters = new Set(['T', 'A', 'N']);
+      const toggleButtons = document.querySelectorAll('.tan-toggle-btn[data-letter]');
+      const logoStage = document.getElementById('logoPreviewStage');
+      const logoPaths = logoStage ? Array.from(logoStage.querySelectorAll('svg g path')) : [];
+      const statusSummary = document.getElementById('tanActiveSummary');
+      const resetBtn = document.getElementById('tanResetBtn');
+
+      function renderMonogramState() {
+        const activePieces = new Set();
+
+        selectedLetters.forEach(function (letter) {
+          const pieces = LETTER_PIECES_MAP[letter] || [];
+          pieces.forEach(function (num) {
+            activePieces.add(num);
+          });
+        });
+
+        logoPaths.forEach(function (pathEl, index) {
+          const pieceNumber = Number(pathEl.getAttribute('data-piece')) || (index + 1);
+          const isLit = activePieces.has(pieceNumber);
+
+          pathEl.style.transition = 'fill 0.2s ease, opacity 0.2s ease';
+          if (isLit) {
+            pathEl.setAttribute('fill', '#1D5BD6');
+            pathEl.style.opacity = '1';
+          } else {
+            pathEl.setAttribute('fill', '#B8B09E');
+            pathEl.style.opacity = '0.45';
+          }
+        });
+
+        toggleButtons.forEach(function (btn) {
+          const letter = btn.getAttribute('data-letter');
+          const isActive = selectedLetters.has(letter);
+          btn.classList.toggle('active', isActive);
+          btn.setAttribute('aria-pressed', String(isActive));
+        });
+
+        if (statusSummary) {
+          if (selectedLetters.size === 0) {
+            statusSummary.textContent = 'MODE: TIDAK ADA HURUF AKTIF (0 POTONGAN)';
+          } else if (selectedLetters.size === 3) {
+            statusSummary.textContent = 'MODE: MONOGRAM UTUH (4 POTONGAN AKTIF)';
+          } else {
+            const activeLettersList = ['T', 'A', 'N'].filter(function (l) {
+              return selectedLetters.has(l);
+            });
+            const litPiecesList = [1, 2, 3, 4].filter(function (p) {
+              return activePieces.has(p);
+            });
+            statusSummary.textContent =
+              'HURUF ' + activeLettersList.join('+') + ' -> POTONGAN ' + litPiecesList.join(', ');
+          }
+        }
+      }
+
+      toggleButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const letter = btn.getAttribute('data-letter');
+          if (!letter) return;
+
+          if (selectedLetters.has(letter)) {
+            selectedLetters.delete(letter);
+          } else {
+            selectedLetters.add(letter);
+          }
+          renderMonogramState();
+        });
+      });
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          selectedLetters.clear();
+          selectedLetters.add('T');
+          selectedLetters.add('A');
+          selectedLetters.add('N');
+          renderMonogramState();
+        });
+      }
+
+      renderMonogramState();
+
+      // 3. Diagram Geometri Garis Singgung Interaktif (#filosofi)
+      const angleSlider = document.getElementById('tangentAngle');
+      const angleDisplay = document.getElementById('tangentAngleVal');
+      const tangentGroup = document.getElementById('tangentGroup');
+
+      function updateTangentDiagram(degValue) {
+        const deg = Number(degValue) || 0;
+        if (angleDisplay) {
+          angleDisplay.textContent = deg + '°';
+        }
+        if (tangentGroup) {
+          tangentGroup.setAttribute('transform', 'rotate(' + deg + ' 160 160)');
+        }
+      }
+
+      if (angleSlider) {
+        angleSlider.addEventListener('input', function (e) {
+          updateTangentDiagram(e.target.value);
+        });
+        updateTangentDiagram(angleSlider.value);
+      }
+
+      // 4. Penyusun Pesan Konsultasi Otomatis (WhatsApp & Email)
+      const topicPills = document.querySelectorAll('.topic-pill');
+      const waBtn = document.getElementById('waConsultBtn');
+      const emailBtn = document.getElementById('emailConsultBtn');
+
+      function updateContactLinks(topicText) {
+        const cleanTopic = (topicText || 'Pengembangan Perangkat Lunak').trim();
+        const message =
+          'Halo PT Tangen Universal Teknologi, saya ingin berdiskusi mengenai ' +
+          cleanTopic +
+          '.';
+
+        if (waBtn) {
+          waBtn.href =
+            'https://wa.me/6281997357609?text=' + encodeURIComponent(message);
+        }
+
+        if (emailBtn) {
+          emailBtn.href =
+            'mailto:halo@tangen.co.id?subject=' +
+            encodeURIComponent('Diskusi Proyek — ' + cleanTopic) +
+            '&body=' +
+            encodeURIComponent(message);
+        }
+      }
+
+      topicPills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          topicPills.forEach(function (p) {
+            p.classList.remove('active');
+          });
+          pill.classList.add('active');
+          const topic = pill.getAttribute('data-topic') || pill.textContent;
+          updateContactLinks(topic);
+        });
+      });
+
+      const initialActivePill = document.querySelector('.topic-pill.active');
+      if (initialActivePill) {
+        updateContactLinks(
+          initialActivePill.getAttribute('data-topic') || initialActivePill.textContent
+        );
+      }
+    })();
+  </script>
+</body>
+</html>
